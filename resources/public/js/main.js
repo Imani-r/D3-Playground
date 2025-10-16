@@ -1,3 +1,24 @@
+// node_modules/d3-array/src/mean.js
+function mean(values, valueof) {
+  let count = 0;
+  let sum = 0;
+  if (valueof === undefined) {
+    for (let value of values) {
+      if (value != null && (value = +value) >= value) {
+        ++count, sum += value;
+      }
+    }
+  } else {
+    let index = -1;
+    for (let value of values) {
+      if ((value = valueof(value, ++index, values)) != null && (value = +value) >= value) {
+        ++count, sum += value;
+      }
+    }
+  }
+  if (count)
+    return sum / count;
+}
 // node_modules/d3-dispatch/src/dispatch.js
 var noop = { value: () => {} };
 function dispatch() {
@@ -910,6 +931,11 @@ Selection.prototype = selection.prototype = {
   [Symbol.iterator]: iterator_default
 };
 var selection_default = selection;
+
+// node_modules/d3-selection/src/select.js
+function select_default2(selector) {
+  return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
+}
 // node_modules/d3-color/src/define.js
 function define_default(constructor, factory, prototype) {
   constructor.prototype = factory.prototype = prototype;
@@ -2075,7 +2101,7 @@ function remove_default2() {
 }
 
 // node_modules/d3-transition/src/transition/select.js
-function select_default2(select) {
+function select_default3(select) {
   var name = this._name, id = this._id;
   if (typeof select !== "function")
     select = selector_default(select);
@@ -2293,7 +2319,7 @@ function newId() {
 var selection_prototype = selection_default.prototype;
 Transition.prototype = transition.prototype = {
   constructor: Transition,
-  select: select_default2,
+  select: select_default3,
   selectAll: selectAll_default2,
   selectChild: selection_prototype.selectChild,
   selectChildren: selection_prototype.selectChildren,
@@ -2661,5 +2687,30 @@ function main() {
 }
 var flowers_default = main;
 
+// src/main/viz/sandbox.js
+var data2;
+async function loadData2() {
+  data2 = await dsv(",", "resources/data/Inc5000+Company+List_2014-top250.csv");
+}
+function update(data3) {
+  select_default2("#content tbody").selectAll("tr").data(data3).join("tr").html(function(d) {
+    let html = "";
+    html += "<td>" + d.company + "</td>";
+    html += "<td>" + d.industry + "</td>";
+    html += "<td>" + d.revenue + "</td>";
+    html += "<td>" + d.workers + "</td>";
+    return html;
+  });
+}
+async function main2() {
+  await loadData2();
+  const mean2 = mean(data2, (d) => +d.workers);
+  select_default2("#stats").text(`Mean workers: ${mean2}`);
+  update(data2);
+  console.log("Average number of workers:", mean2);
+}
+var sandbox_default = main2;
+
 // src/main/main.js
 flowers_default();
+sandbox_default();

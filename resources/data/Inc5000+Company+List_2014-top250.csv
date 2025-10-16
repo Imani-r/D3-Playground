@@ -1,0 +1,251 @@
+rank,workers,company,state_l,city,growth,revenue,industry
+1,227,Fuhu,California,El Segundo,158956.9106,195640000,Consumer Products & Services
+2,191,Quest Nutrition,California,El Segundo,57347.9246,82640563,Food & Beverage
+3,145,Reliant Asset Management,Virginia,Arlington,55460.1646,85076502,Business Products & Services
+4,62,Superfish,California,Palo Alto,26042.963,35293000,Software
+5,92,Acacia Communications,Massachusetts,Maynard,20690.4578,77652360,Telecommunications
+6,50,Provider Power,Maine,Auburn,19876.5169,137977203,Energy
+7,129,Crescendo Bioscience,California,South San Francisco,18375.0693,27308000,Health
+8,130,Plexus Worldwide,Arizona,Scottsdale,16457.6529,159897088,Health
+9,264,Vacasa,Oregon,Portland,16192.061,26263454,Travel & Hospitality
+10,11,Go Energies,North Carolina,Wilmington,16006.8013,32851754,Energy
+11,113,Minute Key,Colorado,Boulder,14588.3448,15782039,Consumer Products & Services
+12,135,Sainstore,Kansas,Lenexa,14086.513,19243863,Business Products & Services
+13,153,The HCI Group,Florida,Jacksonville,13230.9467,34583142,Health
+14,313,Dynamic Dental Partners Group,Florida,Palmetto,12895.5867,19802935,Health
+15,159,Aseptia,North Carolina,Raleigh,12427.4225,13887650,Food & Beverage
+16,34,Asentra Health,Hawaii,Honolulu,12127.9133,20445071,Health
+17,436,American Solar Direct,California,Los Angeles,11560.3538,52086567,Energy
+18,42,Prescient Edge,Virginia,McLean,11497.7718,12315210,Government Services
+19,27,BlueSquare Resolutions,Arizona,Scottsdale,11488.6004,46400872,Financial Services
+20,44,BES Design/Build,Alabama,Fairhope,11374.9136,11819161,Engineering
+21,12,Simpler Trading,Texas,Austin,10522.6415,11260000,Financial Services
+22,790,sweetFrog Premium Frozen Yogurt,Virginia,Richmond,10371.7994,34382478,Food & Beverage
+23,17,Base Commerce,Arizona,Tempe,10186.259,12479598,Financial Services
+24,102,CPSG Partners,Texas,Dallas,9531.6371,17095000,IT Services
+25,102,MedHOK,Florida,Tampa,9109.1892,17037000,Health
+26,90,Showroom Logic,Florida,Miami,8448.5785,13443409,Advertising & Marketing
+27,27,WeVeel,Pennsylvania,Morrisville,8239.8148,9007000,Consumer Products & Services
+28,10,PackIt,California,Westlake Village,7877.9544,11874148,Consumer Products & Services
+29,8,American Retirement Advisors,Arizona,Scottsdale,7758.1594,13876488,Financial Services
+30,200,HighPoint Global,Indiana,Indianapolis,7638.5408,95810719,Business Products & Services
+31,33,AdKarma,Missouri,Columbia,7635.2397,13326503,Advertising & Marketing
+32,176,Axtria,New Jersey,Berkeley Heights,7351.2959,8963909,IT Services
+33,24,Dolls Kill,California,San Francisco,7055.6604,7585000,Retail
+34,140,Centric Digital,New York,New York,6898.4173,18045419,Business Products & Services
+35,55,Retail Capital,Michigan,Troy,6861.3577,7013359,Financial Services
+36,61,Restore Health,Wisconsin,Madison,6663.1769,6821205,Health
+37,53,OpenRoad Lending,Texas,North Richland Hills,6603.3722,8853881,Financial Services
+38,25,Pontchartrain Partners,Louisiana,New Orleans,6535.0538,10545091,Government Services
+39,1,Team Extreme Marketing International,Maryland,Chevy Chase,6369.1921,6772856,Consumer Products & Services
+40,4,Choice Energy,Iowa,Des Moines,6020.9548,20894369,Energy
+41,24,ReviMedia,New York,New York,5817.1289,5963105,Advertising & Marketing
+42,96,SmartZip Analytics,California,Pleasanton,5811.3568,11396150,Software
+43,48,Thompson Gray,Alabama,Huntsville,5752.5251,14104761,Government Services
+44,147,MCSG Technologies,Oklahoma,Norman,5715.2859,7686703,IT Services
+45,20,Innovative Surveillance Solutions,Texas,Tyler,5604.7826,10247444,Security
+46,379,Nordic,Wisconsin,Madison,5593.0143,81410104,Health
+47,40,Michigan Realty Solutions,Michigan,Richmond,5530.8057,6178120,Real Estate
+48,17,Ohio Investments,Ohio,Enon,5507.4529,23809245,Real Estate
+49,30,Adore Me,New York,New York,5505.55,5637838,Retail
+50,35,IQ Formulations,Florida,Sunrise,5486.2116,8269660,Health
+51,32,MAX Digital,Illinois,Chicago,5483.1298,6577541,Software
+52,50,MaxHome,Louisiana,New Orleans,5438.9673,5792929,Construction
+53,1106,Alex and Ani,Rhode Island,Cranston,5220.9165,230109687,Retail
+54,46,Crowdtap,New York,New York,5217.2043,6261593,Advertising & Marketing
+55,30,Compass Automation,Illinois,Elgin,5214.2331,5703235,Manufacturing
+56,35,Multifamily Utility,California,San Diego,5196.0656,5757194,Real Estate
+57,19,The Joint,Arizona,Scottsdale,5139.4732,5958067,Health
+58,70,Bizness Apps,California,San Francisco,5078.5874,6178728,Software
+59,59,EcoSense Lighting,California,Los Angeles,5059.1489,15363997,Manufacturing
+60,61,PhotoBin,California,San Diego,5003.4376,6385268,Consumer Products & Services
+61,44,PMG Worldwide,Texas,Fort Worth,5000.4026,5764577,Advertising & Marketing
+62,19,Victor Securities,New Jersey,Englewood,4897.024,6494832,Financial Services
+63,89,eLan Technologies,Texas,Irving,4863.7089,9149555,IT Services
+64,41,Centennial Lending Group,Pennsylvania,Maple Glen,4845.0294,166889598,Financial Services
+65,143,Tough Mudder,New York,Brooklyn,4737.5104,107900476,Health
+66,40,Netcom3 Global,California,Laguna Niguel,4724.7797,30058088,Software
+67,3,Gideon Services,Alabama,Huntsville,4723.0413,23252268,Government Services
+68,34,Viderity,District of Columbia,Washington,4722.8947,18327000,Government Services
+69,37,Affectiva,Massachusetts,Waltham,4676.4588,5017670,Software
+70,40,AdHarmonics,Massachusetts,Cambridge,4669.4024,45929345,Advertising & Marketing
+71,28,Acordis International,Florida,Miramar,4638.7226,6000834,IT Services
+72,40,KRAVE Pure Foods,California,Sonoma,4632.0582,16940863,Food & Beverage
+73,175,Main Street Hub,Texas,Austin,4625.3168,9157664,Advertising & Marketing
+74,4,First Point Power,Rhode Island,East Greenwich,4355.2259,23499000,Energy
+75,64,Ethology,Arizona,Scottsdale,4219.4187,8815804,Advertising & Marketing
+76,126,Regal Wings,New York,Brooklyn,4146.4844,54355000,Travel & Hospitality
+77,23,Solect Energy Development,Massachusetts,Hopkinton,4101.3374,12477972,Energy
+78,16,Old Pro Roofing,Texas,Burleson,4076.4206,4897229,Construction
+79,53,Clean Energy Experts,California,Manhattan Beach,4063.5937,6058237,Advertising & Marketing
+80,32,LogoUp.com,Florida,Pompano Beach,4062.0098,8003961,Retail
+81,28,ANALYTICA,District of Columbia,Washington,4056.1632,15010399,IT Services
+82,131,Phunware,Texas,Austin,4040.0382,22119065,Software
+83,39,iCracked,California,Redwood City,4033.2486,7315850,Consumer Products & Services
+84,13,BuyBackWorld,New York,Long Island City,4011.2131,4139786,Consumer Products & Services
+85,49,Tahzoo,District of Columbia,Washington,3946.3888,5693350,Advertising & Marketing
+86,1250,Connexion Point,Utah,Salt Lake City,3943.8155,18286053,Health
+87,2,Meister Cook,Indiana,Fort Wayne,3943.004,7707138,Business Products & Services
+88,150,TUNE,Washington,Seattle,3939.4786,18904275,Advertising & Marketing
+89,28,Constructure Management,Pennsylvania,Malvern,3929.4614,33167746,Construction
+90,14,Pendo Management Group,Missouri,Lee's Summit,3877.8706,8471671,Real Estate
+91,45,Gemini Consulting & Services,Missouri,St. Louis,3869.7686,6469651,IT Services
+92,764,Next Step Living,Massachusetts,Boston,3859.6587,58009000,Energy
+93,26,FastPay,California,Beverly Hills,3824.8721,5061986,Financial Services
+94,6,Early Upgrade,Florida,Jacksonville,3745.689,18068816,Consumer Products & Services
+95,90,Yochana IT Solutions,Michigan,Farmington Hills,3694.0309,5637285,IT Services
+96,192,American Care Partners,Virginia,Falls Church,3656.7915,6580396,Health
+97,10,Prepay Nation,Pennsylvania,Berwyn,3637.1336,110914763,Financial Services
+98,115,PEG Bandwidth,Texas,The Colony,3612.7746,32895443,Telecommunications
+99,108,Global Energy Efficiency,New York,Bronx,3588.5841,12860765,Energy
+100,72,LaunchPoint,Illinois,Itasca,3544.2164,12899943,Health
+101,7,Equipatron,Wisconsin,Mequon,3543.1,5284863,Retail
+102,12,GovSmart,Virginia,Charlottesville,3532.3775,25433653,Computer Hardware
+103,90,The Clymb,Oregon,Portland,3531.5493,64460000,Retail
+104,380,Alliance Health,Utah,Salt Lake City,3490.2076,85596581,Health
+105,100,Inkling,California,San Francisco,3443.0435,8149000,Software
+106,80,Patriot Group International,Virginia,Warrenton,3401.9117,24073472,Government Services
+107,65,Insureon,Illinois,Chicago,3357.8136,11844049,Insurance
+108,146,RevLocal,Ohio,Granville,3341.7125,7268587,Advertising & Marketing
+109,37,Apex Fuels,California,Murrieta,3323.5318,134567633,Energy
+110,200,Multicoreware,California,Sunnyvale,3322.105,7686082,Software
+111,87,MobileHelp,Florida,Boca Raton,3304.8214,18661656,Health
+112,12,Ataraxis,Idaho,Boise,3277.519,40765844,Human Resources
+113,15,Fortress Gold Group,California,Sherman Oaks,3257.9707,9809304,Financial Services
+114,73,AdColony,California,Los Angeles,3236.4728,52783000,Advertising & Marketing
+115,87,Integral Ad Science,New York,New York,3231.6852,23442470,Advertising & Marketing
+116,18,Technomax,New Jersey,West Windsor,3225.0636,4002379,IT Services
+117,458,hCentive,Virginia,Reston,3214.4606,26493445,Health
+118,14,Intelligent Audit,New Jersey,Rochelle Park,3122.0588,318842114,Logistics & Transportation
+119,60,SimpliSafe Home Security,Massachusetts,Cambridge,3075.8406,38454825,Security
+120,43,Boxman Studios,North Carolina,Charlotte,3074.0826,4322910,Business Products & Services
+121,30,SeatGeek,New York,New York,3039.1304,12274000,Consumer Products & Services
+122,23,Smashwords,California,Los Gatos,3018.5723,22037828,Media
+123,18,Securityhunter,Maryland,Baltimore,2998.3413,35931650,Government Services
+124,74,VRx,Utah,Salt Lake City,2987.2957,89554237,Health
+125,42,SmackTom.com,Florida,Miami,2963.7255,3125000,Retail
+126,10,Virtual Fleet Supervisor,Florida,Oviedo,2948.8362,3526101,Software
+127,262,CareCloud,Florida,Miami,2939.6153,10455000,Health
+128,64,Fueled,New York,New York,2916.7442,6486000,Advertising & Marketing
+129,14,Bob's Watches,California,Westminster,2861.191,11101120,Retail
+130,6,CPA Trend,New York,Howard Beach,2842.941,5826876,Advertising & Marketing
+131,17,Jobs2Careers,Texas,Austin,2829.7514,22359716,Human Resources
+132,200,29 Prime,California,Irvine,2790.9199,20289054,Advertising & Marketing
+133,180,Prolim,Michigan,Farmington Hills,2756.9034,5129970,IT Services
+134,867,Loyal Source Government Services,Florida,Orlando,2753.5176,55980536,Government Services
+135,24,Marketsmith,New Jersey,Parsippany,2752.5555,72908666,Advertising & Marketing
+136,18,Project Management Academy,Indiana,West Lafayette,2752.4901,8094996,Education
+137,25,Flying Cork Media,Pennsylvania,Pittsburgh,2745.4166,7502709,Advertising & Marketing
+138,160,Motivity Labs,Texas,Irving,2716.0018,3225899,IT Services
+139,232,Twilio,California,San Francisco,2710.8696,51720000,Telecommunications
+140,20,Signature Closers,Ohio,Upper Arlington,2709.3881,3843580,Real Estate
+141,81,PureCars,South Carolina,Charleston,2689.9672,8725985,Advertising & Marketing
+142,96,The Cambridge Institute of International Education,Massachusetts,Waltham,2683.3172,9784000,Education
+143,53,Market6,Illinois,Deerfield,2677.1957,15085838,Software
+144,53,LiveRamp,California,San Francisco,2665.2479,21040412,Advertising & Marketing
+145,160,MyClean,New York,New York,2646.4033,4399793,Consumer Products & Services
+146,35,PresenceLearning,California,San Francisco,2634.2593,5906000,Education
+147,140,Residential Capital Management,Georgia,Atlanta,2626.018,30167124,Real Estate
+148,14,Total Technology Solutions Group,Illinois,St. Charles,2608.0908,3115496,Business Products & Services
+149,98,Buy PD,Utah,American Fork,2606.3465,79837059,Real Estate
+150,120,Goal Zero,Utah,Bluffdale,2598.7288,34249000,Consumer Products & Services
+151,89,Advocate Merchant Solutions,Indiana,Fishers,2573.062,4531348,Financial Services
+152,2200,Sky Zone Indoor Trampoline Park,California,Los Angeles,2571.0587,88183962,Consumer Products & Services
+153,11,Avenue Link,Kansas,Overland PArk,2564.509,6360103,Advertising & Marketing
+154,12,Incredible Supply & Logistics,Virginia,Virginia Beach,2550.7143,7422000,Government Services
+155,14,ReSell,Florida,Maitland,2545.6932,4728621,Business Products & Services
+156,29,Legion Logistics,Kentucky,Florence,2545.2064,15115027,Logistics & Transportation
+157,11,GrayPay,California,Encino,2539.989,2981762,Financial Services
+158,1,Urban Investment Group,District of Columbia,Washington,2526.0778,4822398,Real Estate
+159,12,SPHERE Technology Solutions,New Jersey,Hoboken,2524.0876,3595000,Security
+160,64,Bai Brands,New Jersey,Hamilton,2521.6684,17139891,Food & Beverage
+161,15,RocketDrop,New Hampshire,Salem,2518.6981,72626345,Business Products & Services
+162,24,ECHO Health,Ohio,Westlake,2509.1757,46984261,Health
+163,75,Marathon TS,Virginia,Kilmarnock,2507.7517,6821409,Government Services
+164,8,AudioMicro,California,Sherman Oaks,2495.6297,5426086,Media
+165,6,LED Supply,Colorado,Lakewood,2474.0559,2877743,Business Products & Services
+166,6,LeGault Homes,Virginia,Glen Allen,2455.075,7660396,Real Estate
+167,9,Forte International Tax,Illinois,Evanston,2447.3722,3475711,Financial Services
+168,31,Paradigm Mechanical,California,Lemon Grove,2439.5443,5250000,Construction
+169,45,Finance Store,California,Santa Ana,2436.3022,4590707,Financial Services
+170,27,Pure Incubation,Massachusetts,Topsfield,2427.7792,4696917,Advertising & Marketing
+171,10,Kohana Coffee,Texas,Austin,2416.7762,2825786,Food & Beverage
+172,107,Ensighten,California,Cupertino,2415.8055,8277000,Advertising & Marketing
+173,123,Pathway Genomics,California,San Diego,2415.5285,14426053,Health
+174,325,CenseoHealth,Texas,Dallas,2406.9499,117230240,Health
+175,270,3A/WorldWide,Florida,Miami,2402.7683,57568000,Advertising & Marketing
+176,90,180Fusion,California,Los Angeles,2379.1819,6662008,Advertising & Marketing
+177,47,Kamis,Maryland,Gaithersburg,2368.9874,3058705,IT Services
+178,35,Apex Controls,Georgia,McDonough,2360.0708,7789273,Energy
+179,16,InkSoft,New Mexico,Albuquerque,2347.731,2488706,Software
+180,19,Futurewave Systems,Georgia,Atlanta,2342.899,2768000,IT Services
+181,20,6 Pack Fitness,California,San Francisco,2336.4112,6310305,Retail
+182,10,Genzum Life Sciences,California,Los Angeles,2333.3009,8561253,Health
+183,247,ProctorU,California,Livermore,2312.1435,6435816,Education
+184,19,Dakenna Development,Florida,Jacksonville,2302.5208,8270918,Construction
+185,68,Duda,California,Palo Alto,2299.954,5532830,Software
+186,35,Holganix,Pennsylvania,Glen Mills,2291.3554,4306568,Environmental Services
+187,15,NITS Solutions,Michigan,Novi,2291.3176,2775411,IT Services
+188,18,Paramount Lodging Advisors,Illinois,Chicago,2288.3653,2465605,Real Estate
+189,35,EmazingLights,California,Anaheim,2281.335,5842010,Retail
+190,35,Level Interactive,Pennsylvania,Pittsburgh,2258.7014,11958616,Advertising & Marketing
+191,75,shopkick,California,Redwood City,2250.0409,26319118,Retail
+192,129,TekWissen,Michigan,Ann Arbor,2236.1753,7802802,IT Services
+193,15,VPCinnovations,Wisconsin,Mount Pleasant,2234.3619,5390952,Computer Hardware
+194,42,Clean Energy Collective,Colorado,Boulder,2216.9118,9453000,Energy
+195,13,Silver Bullet Construction,Texas,Dalworthington Garden,2215.5963,2524000,Construction
+196,48,Aegis Corps,Virginia,Chantilly,2208.3868,2900488,Government Services
+197,300,uBreakiFix,Florida,Orlando,2188.8349,26472870,Retail
+198,302,Culture.Service.Growth.,Texas,San Antonio,2182.0898,7993065,Business Products & Services
+199,72,CardCash.com,New Jersey,Brick,2181.7178,55788000,Consumer Products & Services
+200,450,Protein Bar,Illinois,Chicago,2181.6917,14211083,Food & Beverage
+201,45,Metis Solutions,Virginia,Alexandria,2170.6344,8686766,Government Services
+202,17,Title Boxing Club,Kansas,Overland Park,2168.421,34252000,Health
+203,52,VETS Etc.,California,Seaside,2162.0323,6480926,IT Services
+204,32,LocalResponse,New York,New York,2152.8937,9565336,Advertising & Marketing
+205,36,Tongal,California,Santa Monica,2144.0473,8417085,Advertising & Marketing
+206,84,Novisync Solutions,New York,Fishkill,2143.7949,8517670,IT Services
+207,40,Tax Guard,Colorado,Boulder,2140.5432,4354787,Financial Services
+208,12,Nexgen Property Solutions,Texas,Laredo,2135.5987,5378001,Financial Services
+209,120,PerformTel,Minnesota,Ramsey,2120.61,2273616,Business Products & Services
+210,25,R.J. Allen & Associates,Mississippi,Oxford,2117.7132,26199465,Construction
+211,6,Splash and Dash for Dogs International,Florida,St. Petersburg,2117.7004,2291195,Consumer Products & Services
+212,17,ePremium Insurance,Ohio,Mason,2109.317,3795474,Insurance
+213,15,McAfee Institute,Illinois,Peoria,2097.07,39571912,Education
+214,7,IDsecurityonline.com,New York,New York,2093.0319,4898356,Security
+215,25,Wren,California,Los Angeles,2092.1892,5154056,Retail
+216,16,Newmind Group,Michigan,Kalamazoo,2065.3678,15469496,IT Services
+217,43,Obsidian Analysis,District of Columbia,Washington,2061.3142,9105768,Government Services
+218,10,Universal Synaptics,Utah,Roy,2042.1898,2149259,Government Services
+219,13,Global Commerce and Services,Louisiana,Harvey,2040.9645,3521801,Government Services
+220,42,Stoneside Blinds & Shades,Colorado,Denver,2040.0212,4893244,Consumer Products & Services
+221,35,Blue Star Tec,Illinois,Bloomingdale,2033.014,3869970,IT Services
+222,22,Loqate,California,San Mateo,2025.7586,4464093,Software
+223,155,PresPro,North Carolina,Harrisburg,2011.857,3539958,Construction
+224,59,PcCareSupport,Utah,Provo,2001.4546,2364977,IT Services
+225,42,AltaSource Group,Washington,Kirkland,1996.6068,7116722,IT Services
+226,74,VDX,New Jersey,Cranford,1996.4706,8910000,IT Services
+227,30,Cloudbilt,North Carolina,Charlotte,1994.6083,4074453,Software
+228,14,Strategi Consulting,Maryland,Chevy Chase,1994.359,3475505,IT Services
+229,3,PPT Fiberglass,Texas,Houston,1983.3333,2500000,Manufacturing
+230,4,X5 Networks,Delaware,Wilmington,1970.7638,2114664,IT Services
+231,74,Pathoras,Virginia,Fairfax,1960.201,9306999,Government Services
+232,11,American Wireless,Virginia,Arlington,1957.7655,42522345,Telecommunications
+233,174,SendGrid,Colorado,Boulder,1944.7493,28906069,Software
+234,28,Laudan Properties,Ohio,Twinsburg,1938.44,10107299,Real Estate
+235,20,Streamline Solutions,Pennsylvania,Philadelphia,1926.8608,7955530,Real Estate
+236,7,Eau De Luxe,New York,Long Island City,1926.8199,2540031,Retail
+237,16,Levitate Media,California,San Francisco,1923.3738,2094293,Media
+238,80,Avani Technology Solutions,New York,Rochester,1915.7856,7333811,IT Services
+239,19,Expert Technical Solutions,Georgia,Atlanta,1908.1744,3493139,IT Services
+240,25,Motiv Power Systems,California,Foster City,1900.4708,2681071,Energy
+241,10,Allurez,New York,Great Neck,1895.0226,3681934,Retail
+242,125,Logical Paradigm,Virginia,Herndon,1892.7737,7642008,IT Services
+243,125,LiveRail,California,San Francisco,1892.6301,72731000,Advertising & Marketing
+244,24,Hydro Flask,Oregon,Bend,1890.4539,12684307,Consumer Products & Services
+245,250,Act-On Software,Oregon,Beaverton,1879.873,19378839,Software
+246,3,Spartan Value Investors,Alabama,Birmingham,1865.5423,3370905,Real Estate
+247,16,GreenRope,California,Cardiff,1858.9052,2129330,Software
+248,385,Lending Club,California,San Francisco,1854.1775,98002000,Financial Services
+249,24,DrChrono,California,Mountain View,1834.0544,2863000,Health
+250,75,Capstone (Sausalito CA),California,Sausalito,1832.2052,13719024,Business Products & Services

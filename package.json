@@ -8,5 +8,8 @@
     "react-dom": "^19.1.1"
   },
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "dev": "bun build ./src/main/viz/sandbox.js --outfile=resources/public/js/sandbox.js --format=iife --watch"
+  }
 }
