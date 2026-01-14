@@ -28,16 +28,18 @@ async function main() {
   await loadData(); // Wait for data to load first
 
   const mean = d3.mean(data, (d) => +d.workers); // Calculate mean after data loads
+  const max_rev = d3.max(data, (d) => d.revenue);
 
   // Display in the stats div
   d3.select("#stats").text(`Mean workers: ${mean}`);
 
   update(data); // Update DOM with the loaded data
   console.log("Average number of workers:", mean);
+  console.log("Maximum revenue:", max_rev);
 }
 
-(async () => {
-  await main();
-})();
+// (async () => {
+//   await main();
+// })();
 
 export default main;

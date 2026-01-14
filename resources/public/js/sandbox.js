@@ -33,6 +33,25 @@
     default: () => sandbox_default
   });
 
+  // node_modules/d3-array/src/max.js
+  function max(values, valueof) {
+    let max2;
+    if (valueof === undefined) {
+      for (const value of values) {
+        if (value != null && (max2 < value || max2 === undefined && value >= value)) {
+          max2 = value;
+        }
+      }
+    } else {
+      let index = -1;
+      for (let value of values) {
+        if ((value = valueof(value, ++index, values)) != null && (max2 < value || max2 === undefined && value >= value)) {
+          max2 = value;
+        }
+      }
+    }
+    return max2;
+  }
   // node_modules/d3-array/src/mean.js
   function mean(values, valueof) {
     let count = 0;
@@ -1266,15 +1285,15 @@
     if (o instanceof Hsl)
       return o;
     o = o.rgb();
-    var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max = Math.max(r, g, b), h = NaN, s = max - min, l = (max + min) / 2;
+    var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max2 = Math.max(r, g, b), h = NaN, s = max2 - min, l = (max2 + min) / 2;
     if (s) {
-      if (r === max)
+      if (r === max2)
         h = (g - b) / s + (g < b) * 6;
-      else if (g === max)
+      else if (g === max2)
         h = (b - r) / s + 2;
       else
         h = (r - g) / s + 4;
-      s /= l < 0.5 ? max + min : 2 - max - min;
+      s /= l < 0.5 ? max2 + min : 2 - max2 - min;
       h *= 60;
     } else {
       s = l > 0 && l < 1 ? 0 : h;
@@ -2704,6 +2723,7 @@
     return node.__zoom;
   }
   // src/main/viz/sandbox.js
+  console.log("SANDBOX LOADED - VERSION 2");
   var data;
   async function loadData() {
     data = await dsv(",", "resources/data/Inc5000+Company+List_2014-top250.csv");
@@ -2721,12 +2741,11 @@
   async function main() {
     await loadData();
     const mean2 = mean(data, (d) => +d.workers);
+    const max_rev = max(data, (d) => d.revenue);
     select_default2("#stats").text(`Mean workers: ${mean2}`);
     update(data);
-    console.log("Average number of workers:", mean2);
+    console.log("Average number of workerssss:", mean2);
+    console.log("Maximum revenue:", max_rev);
   }
-  (async () => {
-    await main();
-  })();
   var sandbox_default = main;
 })();

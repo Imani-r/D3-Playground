@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="resources/public/css/style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>D3 Playground</title>
+    <link rel="stylesheet" href="resources/public/css/style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
+
   <body>
-    <main>
-    </main>
+    <svg width="960" height="500">
+      <circle cx="50" cy="50" r="50" fill="green"></circle>
+      <circle cx="150" cy="50" r="45" fill="green"></circle>
+      <circle cx="250" cy="50" r="40" fill="green"></circle>
+      <circle cx="350" cy="50" r="35" fill="green"></circle>
+      <circle cx="450" cy="50" r="30" fill="green"></circle>
+
+      <line x1="0" y1="0" x2="100" y2="100" stroke="navy"></line>
+    </svg>
+
+    <!-- Testing an SVG embed from Iconmonstr-->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z"
+      />
+    </svg>
+
+    <main></main>
     <script src="resources/public/js/main.js"></script>
+
+    <!-- Create a div where the graph will be inserted -->
+    <div id="my_viz"></div>
   </body>
 </html>
