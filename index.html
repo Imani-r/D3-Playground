@@ -11,25 +11,56 @@
 
   <body>
     <svg width="960" height="500">
-      <circle cx="50" cy="50" r="50" fill="green"></circle>
-      <circle cx="150" cy="50" r="45" fill="green"></circle>
-      <circle cx="250" cy="50" r="40" fill="green"></circle>
-      <circle cx="350" cy="50" r="35" fill="green"></circle>
-      <circle cx="450" cy="50" r="30" fill="green"></circle>
-
-      <line x1="0" y1="0" x2="100" y2="100" stroke="navy"></line>
-    </svg>
-
-    <!-- Testing an SVG embed from Iconmonstr-->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
-      viewBox="0 0 24 24"
-    >
+      <!-- Add a clothesline -->
       <path
-        d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.326 18.266l-4.326-2.314-4.326 2.313.863-4.829-3.537-3.399 4.86-.671 2.14-4.415 2.14 4.415 4.86.671-3.537 3.4.863 4.829z"
-      />
+        d="M 0,100 Q 480,200 960,100"
+        stroke="#333"
+        stroke-width="2.5"
+        fill="none"
+      ></path>
+
+      <!-- First towel (center) -->
+      <rect x="405" y="147" width="150" height="200" fill="#c6d3d6"></rect>
+
+      <!-- Second towel (left of center) -->
+      <rect
+        x="225"
+        y="140"
+        width="150"
+        height="200"
+        fill="#e9d3b3"
+        transform="rotate(5, 300, 230)"
+      ></rect>
+
+      <!-- Third towel (right of center) -->
+      <rect
+        x="585"
+        y="139.5"
+        width="150"
+        height="200"
+        fill="#b7c2a3"
+        transform="rotate(-4.2, 660, 230)"
+      ></rect>
+
+      <!-- Fourth towel (far left) -->
+      <rect
+        x="45"
+        y="119.5"
+        width="150"
+        height="200"
+        fill="#a47347"
+        transform="rotate(8.5, 120, 220)"
+      ></rect>
+
+      <!-- Fifth towel (far right) -->
+      <rect
+        x="765"
+        y="119.5"
+        width="150"
+        height="200"
+        fill="#d3a23e"
+        transform="rotate(-8.5, 840, 220)"
+      ></rect>
     </svg>
 
     <main></main>
