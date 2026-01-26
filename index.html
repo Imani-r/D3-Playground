@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <!-- Fill the screen so there are no scroll bars-->
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+
     <svg width="960" height="500">
       <!-- Add a clothesline -->
       <path
@@ -20,7 +28,21 @@
       ></path>
 
       <!-- First towel (center) -->
-      <rect x="405" y="147" width="150" height="200" fill="#c6d3d6"></rect>
+      <polygon fill="#c6d3d6">
+        <animate
+          attributeName="points"
+          values="405,147 555,147 570,362 390,362;
+                  405,147 555,147 555,347 405,347;
+                  405,147 555,147 540,332 420,332;
+                  405,147 555,147 555,347 405,347;
+                  405,147 555,147 570,362 390,362"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </polygon>
+
+      <!-- First towel (center) -->
+      <!-- <rect x="405" y="147" width="150" height="200" fill="#c6d3d6"></rect> -->
 
       <!-- Second towel (left of center) -->
       <rect
