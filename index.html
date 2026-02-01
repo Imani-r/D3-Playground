@@ -7,17 +7,26 @@
     <title>D3 Playground</title>
     <link rel="stylesheet" href="resources/public/css/style.css" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  </head>
-
-  <body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <!-- Fill the screen so there are no scroll bars-->
     <style>
       body {
         margin: 0;
         overflow: hidden;
       }
+      text {
+        font-size: 25px;
+        font-family: "Nunito Sans", sans-serif;
+      }
     </style>
+  </head>
 
+  <body>
     <svg width="960" height="500">
       <!-- Add a clothesline -->
       <path
@@ -90,5 +99,59 @@
 
     <!-- Create a div where the graph will be inserted -->
     <div id="my_viz"></div>
+
+    <!-- Pseudo bar Chart -->
+
+    <svg
+      width="618"
+      height="481"
+      viewBox="0 0 618 481"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="618" height="481" fill="white" />
+      <rect
+        x="401"
+        y="59"
+        width="56"
+        height="345"
+        transform="rotate(90 401 59)"
+        fill="red"
+      />
+      <rect
+        x="235"
+        y="375"
+        width="56"
+        height="179"
+        transform="rotate(90 235 375)"
+        fill="black"
+      />
+      <rect
+        x="273"
+        y="296"
+        width="56"
+        height="217"
+        transform="rotate(90 273 296)"
+        fill="black"
+      />
+      <rect
+        x="315"
+        y="217"
+        width="56"
+        height="259"
+        transform="rotate(90 315 217)"
+        fill="black"
+      />
+      <rect
+        x="360"
+        y="138"
+        width="56"
+        height="304"
+        transform="rotate(90 360 138)"
+        fill="black"
+      />
+
+      <text fill="black" x="411" y="89">First</text>
+    </svg>
   </body>
 </html>
