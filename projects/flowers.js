@@ -8,7 +8,7 @@ let data;
 async function loadData() {
   data = await d3.dsv(
     ",",
-    "resources/data/natural-disasters-type-pivoted.csv",
+    "/resources/data/natural-disasters-type-pivoted.csv",
     (d) => {
       return {
         code: d.Code,
@@ -22,8 +22,10 @@ async function loadData() {
 }
 
 function main() {
-  console.log("flowers");
+  console.log("flowerssss");
   loadData();
 }
 
-export default main;
+(async () => {
+  await main();
+})();

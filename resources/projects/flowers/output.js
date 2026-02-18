@@ -1,78 +1,4 @@
 (() => {
-  var __defProp = Object.defineProperty;
-  var __getOwnPropNames = Object.getOwnPropertyNames;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-  var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __moduleCache = /* @__PURE__ */ new WeakMap;
-  var __toCommonJS = (from) => {
-    var entry = __moduleCache.get(from), desc;
-    if (entry)
-      return entry;
-    entry = __defProp({}, "__esModule", { value: true });
-    if (from && typeof from === "object" || typeof from === "function")
-      __getOwnPropNames(from).map((key) => !__hasOwnProp.call(entry, key) && __defProp(entry, key, {
-        get: () => from[key],
-        enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
-      }));
-    __moduleCache.set(from, entry);
-    return entry;
-  };
-  var __export = (target, all) => {
-    for (var name in all)
-      __defProp(target, name, {
-        get: all[name],
-        enumerable: true,
-        configurable: true,
-        set: (newValue) => all[name] = () => newValue
-      });
-  };
-
-  // src/main/viz/sandbox.js
-  var exports_sandbox = {};
-  __export(exports_sandbox, {
-    default: () => sandbox_default
-  });
-
-  // node_modules/d3-array/src/max.js
-  function max(values, valueof) {
-    let max2;
-    if (valueof === undefined) {
-      for (const value of values) {
-        if (value != null && (max2 < value || max2 === undefined && value >= value)) {
-          max2 = value;
-        }
-      }
-    } else {
-      let index = -1;
-      for (let value of values) {
-        if ((value = valueof(value, ++index, values)) != null && (max2 < value || max2 === undefined && value >= value)) {
-          max2 = value;
-        }
-      }
-    }
-    return max2;
-  }
-  // node_modules/d3-array/src/mean.js
-  function mean(values, valueof) {
-    let count = 0;
-    let sum = 0;
-    if (valueof === undefined) {
-      for (let value of values) {
-        if (value != null && (value = +value) >= value) {
-          ++count, sum += value;
-        }
-      }
-    } else {
-      let index = -1;
-      for (let value of values) {
-        if ((value = valueof(value, ++index, values)) != null && (value = +value) >= value) {
-          ++count, sum += value;
-        }
-      }
-    }
-    if (count)
-      return sum / count;
-  }
   // node_modules/d3-dispatch/src/dispatch.js
   var noop = { value: () => {} };
   function dispatch() {
@@ -985,11 +911,6 @@
     [Symbol.iterator]: iterator_default
   };
   var selection_default = selection;
-
-  // node_modules/d3-selection/src/select.js
-  function select_default2(selector) {
-    return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
-  }
   // node_modules/d3-color/src/define.js
   function define_default(constructor, factory, prototype) {
     constructor.prototype = factory.prototype = prototype;
@@ -1285,15 +1206,15 @@
     if (o instanceof Hsl)
       return o;
     o = o.rgb();
-    var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max2 = Math.max(r, g, b), h = NaN, s = max2 - min, l = (max2 + min) / 2;
+    var r = o.r / 255, g = o.g / 255, b = o.b / 255, min = Math.min(r, g, b), max = Math.max(r, g, b), h = NaN, s = max - min, l = (max + min) / 2;
     if (s) {
-      if (r === max2)
+      if (r === max)
         h = (g - b) / s + (g < b) * 6;
-      else if (g === max2)
+      else if (g === max)
         h = (b - r) / s + 2;
       else
         h = (r - g) / s + 4;
-      s /= l < 0.5 ? max2 + min : 2 - max2 - min;
+      s /= l < 0.5 ? max + min : 2 - max - min;
       h *= 60;
     } else {
       s = l > 0 && l < 1 ? 0 : h;
@@ -2155,7 +2076,7 @@
   }
 
   // node_modules/d3-transition/src/transition/select.js
-  function select_default3(select) {
+  function select_default2(select) {
     var name = this._name, id = this._id;
     if (typeof select !== "function")
       select = selector_default(select);
@@ -2373,7 +2294,7 @@
   var selection_prototype = selection_default.prototype;
   Transition.prototype = transition.prototype = {
     constructor: Transition,
-    select: select_default3,
+    select: select_default2,
     selectAll: selectAll_default2,
     selectChild: selection_prototype.selectChild,
     selectChildren: selection_prototype.selectChildren,
@@ -2722,30 +2643,24 @@
         return identity2;
     return node.__zoom;
   }
-  // src/main/viz/sandbox.js
-  console.log("SANDBOX LOADED - VERSION 2");
+  // projects/flowers.js
   var data;
   async function loadData() {
-    data = await dsv(",", "resources/data/Inc5000+Company+List_2014-top250.csv");
-  }
-  function update(data2) {
-    select_default2("#content tbody").selectAll("tr").data(data2).join("tr").html(function(d) {
-      let html = "";
-      html += "<td>" + d.company + "</td>";
-      html += "<td>" + d.industry + "</td>";
-      html += "<td>" + d.revenue + "</td>";
-      html += "<td>" + d.workers + "</td>";
-      return html;
+    data = await dsv(",", "/resources/data/natural-disasters-type-pivoted.csv", (d) => {
+      return {
+        code: d.Code,
+        entity: d.Entity,
+        year: new Date(d.Year).getFullYear(),
+        disasterType: d["Natural Disaster"],
+        numDeaths: +d["Number of Deaths"]
+      };
     });
   }
-  async function main() {
-    await loadData();
-    const mean2 = mean(data, (d) => +d.workers);
-    const max_rev = max(data, (d) => d.revenue);
-    select_default2("#stats").text(`Mean workers: ${mean2}`);
-    update(data);
-    console.log("Average number of workerssss:", mean2);
-    console.log("Maximum revenue:", max_rev);
+  function main() {
+    console.log("flowerssss");
+    loadData();
   }
-  var sandbox_default = main;
+  (async () => {
+    await main();
+  })();
 })();

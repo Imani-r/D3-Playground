@@ -2688,32 +2688,13 @@
         return identity2;
     return node.__zoom;
   }
-  // src/main/viz/flowers.js
+  // projects/sandbox.js
   var data;
   async function loadData() {
-    data = await dsv(",", "resources/data/natural-disasters-type-pivoted.csv", (d) => {
-      return {
-        code: d.Code,
-        entity: d.Entity,
-        year: new Date(d.Year).getFullYear(),
-        disasterType: d["Natural Disaster"],
-        numDeaths: +d["Number of Deaths"]
-      };
-    });
+    data = await dsv(",", "/resources/data/Inc5000+Company+List_2014-top250.csv");
   }
-  function main() {
-    console.log("flowers");
-    loadData();
-  }
-  var flowers_default = main;
-
-  // src/main/viz/sandbox.js
-  var data2;
-  async function loadData2() {
-    data2 = await dsv(",", "resources/data/Inc5000+Company+List_2014-top250.csv");
-  }
-  function update(data3) {
-    select_default2("#content tbody").selectAll("tr").data(data3).join("tr").html(function(d) {
+  function update(data2) {
+    select_default2("#content tbody").selectAll("tr").data(data2).join("tr").html(function(d) {
       let html = "";
       html += "<td>" + d.company + "</td>";
       html += "<td>" + d.industry + "</td>";
@@ -2722,18 +2703,16 @@
       return html;
     });
   }
-  async function main2() {
-    await loadData2();
-    const mean2 = mean(data2, (d) => +d.workers);
-    const max_rev = max(data2, (d) => d.revenue);
+  async function main() {
+    await loadData();
+    const mean2 = mean(data, (d) => +d.workers);
+    const max_rev = max(data, (d) => d.revenue);
     select_default2("#stats").text(`Mean workers: ${mean2}`);
-    update(data2);
+    update(data);
     console.log("Average number of workers:", mean2);
     console.log("Maximum revenue:", max_rev);
   }
-  var sandbox_default = main2;
-
-  // src/main/main.js
-  flowers_default();
-  sandbox_default();
+  (async () => {
+    await main();
+  })();
 })();

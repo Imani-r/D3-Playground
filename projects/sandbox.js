@@ -5,7 +5,7 @@ let data;
 async function loadData() {
   data = await d3.dsv(
     ",",
-    "resources/data/Inc5000+Company+List_2014-top250.csv"
+    "/resources/data/Inc5000+Company+List_2014-top250.csv"
   );
 }
 
@@ -38,8 +38,6 @@ async function main() {
   console.log("Maximum revenue:", max_rev);
 }
 
-// (async () => {
-//   await main();
-// })();
-
-export default main;
+(async () => {
+  await main();
+})();
