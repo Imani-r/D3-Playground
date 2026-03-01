@@ -41,3 +41,10 @@ async function main() {
 (async () => {
   await main();
 })();
+
+for (i = 0; i < 5; i++) {
+  console.log(i);
+}
+
+const add = (a, b) => a + b;
+console.log(add(20, 30));

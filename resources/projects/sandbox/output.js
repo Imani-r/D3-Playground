@@ -42,8 +42,8 @@
   // node_modules/d3-dispatch/src/dispatch.js
   var noop = { value: () => {} };
   function dispatch() {
-    for (var i = 0, n = arguments.length, _ = {}, t;i < n; ++i) {
-      if (!(t = arguments[i] + "") || t in _ || /[\s.]/.test(t))
+    for (var i2 = 0, n = arguments.length, _ = {}, t;i2 < n; ++i2) {
+      if (!(t = arguments[i2] + "") || t in _ || /[\s.]/.test(t))
         throw new Error("illegal type: " + t);
       _[t] = [];
     }
@@ -54,9 +54,9 @@
   }
   function parseTypenames(typenames, types) {
     return typenames.trim().split(/^|\s+/).map(function(t) {
-      var name = "", i = t.indexOf(".");
-      if (i >= 0)
-        name = t.slice(i + 1), t = t.slice(0, i);
+      var name = "", i2 = t.indexOf(".");
+      if (i2 >= 0)
+        name = t.slice(i2 + 1), t = t.slice(0, i2);
       if (t && !types.hasOwnProperty(t))
         throw new Error("unknown type: " + t);
       return { type: t, name };
@@ -65,17 +65,17 @@
   Dispatch.prototype = dispatch.prototype = {
     constructor: Dispatch,
     on: function(typename, callback) {
-      var _ = this._, T = parseTypenames(typename + "", _), t, i = -1, n = T.length;
+      var _ = this._, T = parseTypenames(typename + "", _), t, i2 = -1, n = T.length;
       if (arguments.length < 2) {
-        while (++i < n)
-          if ((t = (typename = T[i]).type) && (t = get(_[t], typename.name)))
+        while (++i2 < n)
+          if ((t = (typename = T[i2]).type) && (t = get(_[t], typename.name)))
             return t;
         return;
       }
       if (callback != null && typeof callback !== "function")
         throw new Error("invalid callback: " + callback);
-      while (++i < n) {
-        if (t = (typename = T[i]).type)
+      while (++i2 < n) {
+        if (t = (typename = T[i2]).type)
           _[t] = set(_[t], typename.name, callback);
         else if (callback == null)
           for (t in _)
@@ -91,31 +91,31 @@
     },
     call: function(type, that) {
       if ((n = arguments.length - 2) > 0)
-        for (var args = new Array(n), i = 0, n, t;i < n; ++i)
-          args[i] = arguments[i + 2];
+        for (var args = new Array(n), i2 = 0, n, t;i2 < n; ++i2)
+          args[i2] = arguments[i2 + 2];
       if (!this._.hasOwnProperty(type))
         throw new Error("unknown type: " + type);
-      for (t = this._[type], i = 0, n = t.length;i < n; ++i)
-        t[i].value.apply(that, args);
+      for (t = this._[type], i2 = 0, n = t.length;i2 < n; ++i2)
+        t[i2].value.apply(that, args);
     },
     apply: function(type, that, args) {
       if (!this._.hasOwnProperty(type))
         throw new Error("unknown type: " + type);
-      for (var t = this._[type], i = 0, n = t.length;i < n; ++i)
-        t[i].value.apply(that, args);
+      for (var t = this._[type], i2 = 0, n = t.length;i2 < n; ++i2)
+        t[i2].value.apply(that, args);
     }
   };
   function get(type, name) {
-    for (var i = 0, n = type.length, c;i < n; ++i) {
-      if ((c = type[i]).name === name) {
+    for (var i2 = 0, n = type.length, c;i2 < n; ++i2) {
+      if ((c = type[i2]).name === name) {
         return c.value;
       }
     }
   }
   function set(type, name, callback) {
-    for (var i = 0, n = type.length;i < n; ++i) {
-      if (type[i].name === name) {
-        type[i] = noop, type = type.slice(0, i).concat(type.slice(i + 1));
+    for (var i2 = 0, n = type.length;i2 < n; ++i2) {
+      if (type[i2].name === name) {
+        type[i2] = noop, type = type.slice(0, i2).concat(type.slice(i2 + 1));
         break;
       }
     }
@@ -136,9 +136,9 @@
 
   // node_modules/d3-selection/src/namespace.js
   function namespace_default(name) {
-    var prefix = name += "", i = prefix.indexOf(":");
-    if (i >= 0 && (prefix = name.slice(0, i)) !== "xmlns")
-      name = name.slice(i + 1);
+    var prefix = name += "", i2 = prefix.indexOf(":");
+    if (i2 >= 0 && (prefix = name.slice(0, i2)) !== "xmlns")
+      name = name.slice(i2 + 1);
     return namespaces_default.hasOwnProperty(prefix) ? { space: namespaces_default[prefix], local: name } : name;
   }
 
@@ -172,11 +172,11 @@
     if (typeof select !== "function")
       select = selector_default(select);
     for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0;i < n; ++i) {
-        if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
+      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i2 = 0;i2 < n; ++i2) {
+        if ((node = group[i2]) && (subnode = select.call(node, node.__data__, i2, group))) {
           if ("__data__" in node)
             subnode.__data__ = node.__data__;
-          subgroup[i] = subnode;
+          subgroup[i2] = subnode;
         }
       }
     }
@@ -210,9 +210,9 @@
     else
       select = selectorAll_default(select);
     for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, node, i = 0;i < n; ++i) {
-        if (node = group[i]) {
-          subgroups.push(select.call(node, node.__data__, i, group));
+      for (var group = groups[j], n = group.length, node, i2 = 0;i2 < n; ++i2) {
+        if (node = group[i2]) {
+          subgroups.push(select.call(node, node.__data__, i2, group));
           parents.push(node);
         }
       }
@@ -265,8 +265,8 @@
     if (typeof match !== "function")
       match = matcher_default(match);
     for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0;i < n; ++i) {
-        if ((node = group[i]) && match.call(node, node.__data__, i, group)) {
+      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i2 = 0;i2 < n; ++i2) {
+        if ((node = group[i2]) && match.call(node, node.__data__, i2, group)) {
           subgroup.push(node);
         }
       }
@@ -315,46 +315,46 @@
 
   // node_modules/d3-selection/src/selection/data.js
   function bindIndex(parent, group, enter, update, exit, data) {
-    var i = 0, node, groupLength = group.length, dataLength = data.length;
-    for (;i < dataLength; ++i) {
-      if (node = group[i]) {
-        node.__data__ = data[i];
-        update[i] = node;
+    var i2 = 0, node, groupLength = group.length, dataLength = data.length;
+    for (;i2 < dataLength; ++i2) {
+      if (node = group[i2]) {
+        node.__data__ = data[i2];
+        update[i2] = node;
       } else {
-        enter[i] = new EnterNode(parent, data[i]);
+        enter[i2] = new EnterNode(parent, data[i2]);
       }
     }
-    for (;i < groupLength; ++i) {
-      if (node = group[i]) {
-        exit[i] = node;
+    for (;i2 < groupLength; ++i2) {
+      if (node = group[i2]) {
+        exit[i2] = node;
       }
     }
   }
   function bindKey(parent, group, enter, update, exit, data, key) {
-    var i, node, nodeByKeyValue = new Map, groupLength = group.length, dataLength = data.length, keyValues = new Array(groupLength), keyValue;
-    for (i = 0;i < groupLength; ++i) {
-      if (node = group[i]) {
-        keyValues[i] = keyValue = key.call(node, node.__data__, i, group) + "";
+    var i2, node, nodeByKeyValue = new Map, groupLength = group.length, dataLength = data.length, keyValues = new Array(groupLength), keyValue;
+    for (i2 = 0;i2 < groupLength; ++i2) {
+      if (node = group[i2]) {
+        keyValues[i2] = keyValue = key.call(node, node.__data__, i2, group) + "";
         if (nodeByKeyValue.has(keyValue)) {
-          exit[i] = node;
+          exit[i2] = node;
         } else {
           nodeByKeyValue.set(keyValue, node);
         }
       }
     }
-    for (i = 0;i < dataLength; ++i) {
-      keyValue = key.call(parent, data[i], i, data) + "";
+    for (i2 = 0;i2 < dataLength; ++i2) {
+      keyValue = key.call(parent, data[i2], i2, data) + "";
       if (node = nodeByKeyValue.get(keyValue)) {
-        update[i] = node;
-        node.__data__ = data[i];
+        update[i2] = node;
+        node.__data__ = data[i2];
         nodeByKeyValue.delete(keyValue);
       } else {
-        enter[i] = new EnterNode(parent, data[i]);
+        enter[i2] = new EnterNode(parent, data[i2]);
       }
     }
-    for (i = 0;i < groupLength; ++i) {
-      if ((node = group[i]) && nodeByKeyValue.get(keyValues[i]) === node) {
-        exit[i] = node;
+    for (i2 = 0;i2 < groupLength; ++i2) {
+      if ((node = group[i2]) && nodeByKeyValue.get(keyValues[i2]) === node) {
+        exit[i2] = node;
       }
     }
   }
@@ -420,9 +420,9 @@
   function merge_default(context) {
     var selection = context.selection ? context.selection() : context;
     for (var groups0 = this._groups, groups1 = selection._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0;j < m; ++j) {
-      for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i = 0;i < n; ++i) {
-        if (node = group0[i] || group1[i]) {
-          merge[i] = node;
+      for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i2 = 0;i2 < n; ++i2) {
+        if (node = group0[i2] || group1[i2]) {
+          merge[i2] = node;
         }
       }
     }
@@ -435,8 +435,8 @@
   // node_modules/d3-selection/src/selection/order.js
   function order_default() {
     for (var groups = this._groups, j = -1, m = groups.length;++j < m; ) {
-      for (var group = groups[j], i = group.length - 1, next = group[i], node;--i >= 0; ) {
-        if (node = group[i]) {
+      for (var group = groups[j], i2 = group.length - 1, next = group[i2], node;--i2 >= 0; ) {
+        if (node = group[i2]) {
           if (next && node.compareDocumentPosition(next) ^ 4)
             next.parentNode.insertBefore(node, next);
           next = node;
@@ -454,9 +454,9 @@
       return a && b ? compare(a.__data__, b.__data__) : !a - !b;
     }
     for (var groups = this._groups, m = groups.length, sortgroups = new Array(m), j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, sortgroup = sortgroups[j] = new Array(n), node, i = 0;i < n; ++i) {
-        if (node = group[i]) {
-          sortgroup[i] = node;
+      for (var group = groups[j], n = group.length, sortgroup = sortgroups[j] = new Array(n), node, i2 = 0;i2 < n; ++i2) {
+        if (node = group[i2]) {
+          sortgroup[i2] = node;
         }
       }
       sortgroup.sort(compareNode);
@@ -483,8 +483,8 @@
   // node_modules/d3-selection/src/selection/node.js
   function node_default() {
     for (var groups = this._groups, j = 0, m = groups.length;j < m; ++j) {
-      for (var group = groups[j], i = 0, n = group.length;i < n; ++i) {
-        var node = group[i];
+      for (var group = groups[j], i2 = 0, n = group.length;i2 < n; ++i2) {
+        var node = group[i2];
         if (node)
           return node;
       }
@@ -508,9 +508,9 @@
   // node_modules/d3-selection/src/selection/each.js
   function each_default(callback) {
     for (var groups = this._groups, j = 0, m = groups.length;j < m; ++j) {
-      for (var group = groups[j], i = 0, n = group.length, node;i < n; ++i) {
-        if (node = group[i])
-          callback.call(node, node.__data__, i, group);
+      for (var group = groups[j], i2 = 0, n = group.length, node;i2 < n; ++i2) {
+        if (node = group[i2])
+          callback.call(node, node.__data__, i2, group);
       }
     }
     return this;
@@ -633,16 +633,16 @@
   }
   ClassList.prototype = {
     add: function(name) {
-      var i = this._names.indexOf(name);
-      if (i < 0) {
+      var i2 = this._names.indexOf(name);
+      if (i2 < 0) {
         this._names.push(name);
         this._node.setAttribute("class", this._names.join(" "));
       }
     },
     remove: function(name) {
-      var i = this._names.indexOf(name);
-      if (i >= 0) {
-        this._names.splice(i, 1);
+      var i2 = this._names.indexOf(name);
+      if (i2 >= 0) {
+        this._names.splice(i2, 1);
         this._node.setAttribute("class", this._names.join(" "));
       }
     },
@@ -651,14 +651,14 @@
     }
   };
   function classedAdd(node, names) {
-    var list = classList(node), i = -1, n = names.length;
-    while (++i < n)
-      list.add(names[i]);
+    var list = classList(node), i2 = -1, n = names.length;
+    while (++i2 < n)
+      list.add(names[i2]);
   }
   function classedRemove(node, names) {
-    var list = classList(node), i = -1, n = names.length;
-    while (++i < n)
-      list.remove(names[i]);
+    var list = classList(node), i2 = -1, n = names.length;
+    while (++i2 < n)
+      list.remove(names[i2]);
   }
   function classedTrue(names) {
     return function() {
@@ -678,9 +678,9 @@
   function classed_default(name, value) {
     var names = classArray(name + "");
     if (arguments.length < 2) {
-      var list = classList(this.node()), i = -1, n = names.length;
-      while (++i < n)
-        if (!list.contains(names[i]))
+      var list = classList(this.node()), i2 = -1, n = names.length;
+      while (++i2 < n)
+        if (!list.contains(names[i2]))
           return false;
       return true;
     }
@@ -798,9 +798,9 @@
   }
   function parseTypenames2(typenames) {
     return typenames.trim().split(/^|\s+/).map(function(t) {
-      var name = "", i = t.indexOf(".");
-      if (i >= 0)
-        name = t.slice(i + 1), t = t.slice(0, i);
+      var name = "", i2 = t.indexOf(".");
+      if (i2 >= 0)
+        name = t.slice(i2 + 1), t = t.slice(0, i2);
       return { type: t, name };
     });
   }
@@ -809,15 +809,15 @@
       var on = this.__on;
       if (!on)
         return;
-      for (var j = 0, i = -1, m = on.length, o;j < m; ++j) {
+      for (var j = 0, i2 = -1, m = on.length, o;j < m; ++j) {
         if (o = on[j], (!typename.type || o.type === typename.type) && o.name === typename.name) {
           this.removeEventListener(o.type, o.listener, o.options);
         } else {
-          on[++i] = o;
+          on[++i2] = o;
         }
       }
-      if (++i)
-        on.length = i;
+      if (++i2)
+        on.length = i2;
       else
         delete this.__on;
     };
@@ -843,13 +843,13 @@
     };
   }
   function on_default(typename, value, options) {
-    var typenames = parseTypenames2(typename + ""), i, n = typenames.length, t;
+    var typenames = parseTypenames2(typename + ""), i2, n = typenames.length, t;
     if (arguments.length < 2) {
       var on = this.node().__on;
       if (on)
         for (var j = 0, m = on.length, o;j < m; ++j) {
-          for (i = 0, o = on[j];i < n; ++i) {
-            if ((t = typenames[i]).type === o.type && t.name === o.name) {
+          for (i2 = 0, o = on[j];i2 < n; ++i2) {
+            if ((t = typenames[i2]).type === o.type && t.name === o.name) {
               return o.value;
             }
           }
@@ -857,8 +857,8 @@
       return;
     }
     on = value ? onAdd : onRemove;
-    for (i = 0;i < n; ++i)
-      this.each(on(typenames[i], value, options));
+    for (i2 = 0;i2 < n; ++i2)
+      this.each(on(typenames[i2], value, options));
     return this;
   }
 
@@ -893,8 +893,8 @@
   // node_modules/d3-selection/src/selection/iterator.js
   function* iterator_default() {
     for (var groups = this._groups, j = 0, m = groups.length;j < m; ++j) {
-      for (var group = groups[j], i = 0, n = group.length, node;i < n; ++i) {
-        if (node = group[i])
+      for (var group = groups[j], i2 = 0, n = group.length, node;i2 < n; ++i2) {
+        if (node = group[i2])
           yield node;
       }
     }
@@ -1317,8 +1317,8 @@
   function basis_default(values) {
     var n = values.length - 1;
     return function(t) {
-      var i = t <= 0 ? t = 0 : t >= 1 ? (t = 1, n - 1) : Math.floor(t * n), v1 = values[i], v2 = values[i + 1], v0 = i > 0 ? values[i - 1] : 2 * v1 - v2, v3 = i < n - 1 ? values[i + 2] : 2 * v2 - v1;
-      return basis((t - i / n) * n, v0, v1, v2, v3);
+      var i2 = t <= 0 ? t = 0 : t >= 1 ? (t = 1, n - 1) : Math.floor(t * n), v1 = values[i2], v2 = values[i2 + 1], v0 = i2 > 0 ? values[i2 - 1] : 2 * v1 - v2, v3 = i2 < n - 1 ? values[i2 + 2] : 2 * v2 - v1;
+      return basis((t - i2 / n) * n, v0, v1, v2, v3);
     };
   }
 
@@ -1326,8 +1326,8 @@
   function basisClosed_default(values) {
     var n = values.length;
     return function(t) {
-      var i = Math.floor(((t %= 1) < 0 ? ++t : t) * n), v0 = values[(i + n - 1) % n], v1 = values[i % n], v2 = values[(i + 1) % n], v3 = values[(i + 2) % n];
-      return basis((t - i / n) * n, v0, v1, v2, v3);
+      var i2 = Math.floor(((t %= 1) < 0 ? ++t : t) * n), v0 = values[(i2 + n - 1) % n], v1 = values[i2 % n], v2 = values[(i2 + 1) % n], v3 = values[(i2 + 2) % n];
+      return basis((t - i2 / n) * n, v0, v1, v2, v3);
     };
   }
 
@@ -1373,12 +1373,12 @@
   }(1);
   function rgbSpline(spline) {
     return function(colors) {
-      var n = colors.length, r = new Array(n), g = new Array(n), b = new Array(n), i, color2;
-      for (i = 0;i < n; ++i) {
-        color2 = rgb(colors[i]);
-        r[i] = color2.r || 0;
-        g[i] = color2.g || 0;
-        b[i] = color2.b || 0;
+      var n = colors.length, r = new Array(n), g = new Array(n), b = new Array(n), i2, color2;
+      for (i2 = 0;i2 < n; ++i2) {
+        color2 = rgb(colors[i2]);
+        r[i2] = color2.r || 0;
+        g[i2] = color2.g || 0;
+        b[i2] = color2.b || 0;
       }
       r = spline(r);
       g = spline(g);
@@ -1416,37 +1416,37 @@
     };
   }
   function string_default(a, b) {
-    var bi = reA.lastIndex = reB.lastIndex = 0, am, bm, bs, i = -1, s = [], q = [];
+    var bi = reA.lastIndex = reB.lastIndex = 0, am, bm, bs, i2 = -1, s = [], q = [];
     a = a + "", b = b + "";
     while ((am = reA.exec(a)) && (bm = reB.exec(b))) {
       if ((bs = bm.index) > bi) {
         bs = b.slice(bi, bs);
-        if (s[i])
-          s[i] += bs;
+        if (s[i2])
+          s[i2] += bs;
         else
-          s[++i] = bs;
+          s[++i2] = bs;
       }
       if ((am = am[0]) === (bm = bm[0])) {
-        if (s[i])
-          s[i] += bm;
+        if (s[i2])
+          s[i2] += bm;
         else
-          s[++i] = bm;
+          s[++i2] = bm;
       } else {
-        s[++i] = null;
-        q.push({ i, x: number_default(am, bm) });
+        s[++i2] = null;
+        q.push({ i: i2, x: number_default(am, bm) });
       }
       bi = reB.lastIndex;
     }
     if (bi < b.length) {
       bs = b.slice(bi);
-      if (s[i])
-        s[i] += bs;
+      if (s[i2])
+        s[i2] += bs;
       else
-        s[++i] = bs;
+        s[++i2] = bs;
     }
     return s.length < 2 ? q[0] ? one(q[0].x) : zero(b) : (b = q.length, function(t) {
-      for (var i2 = 0, o;i2 < b; ++i2)
-        s[(o = q[i2]).i] = o.x(t);
+      for (var i3 = 0, o;i3 < b; ++i3)
+        s[(o = q[i3]).i] = o.x(t);
       return s.join("");
     });
   }
@@ -1505,8 +1505,8 @@
     }
     function translate(xa, ya, xb, yb, s, q) {
       if (xa !== xb || ya !== yb) {
-        var i = s.push("translate(", null, pxComma, null, pxParen);
-        q.push({ i: i - 4, x: number_default(xa, xb) }, { i: i - 2, x: number_default(ya, yb) });
+        var i2 = s.push("translate(", null, pxComma, null, pxParen);
+        q.push({ i: i2 - 4, x: number_default(xa, xb) }, { i: i2 - 2, x: number_default(ya, yb) });
       } else if (xb || yb) {
         s.push("translate(" + xb + pxComma + yb + pxParen);
       }
@@ -1531,8 +1531,8 @@
     }
     function scale(xa, ya, xb, yb, s, q) {
       if (xa !== xb || ya !== yb) {
-        var i = s.push(pop(s) + "scale(", null, ",", null, ")");
-        q.push({ i: i - 4, x: number_default(xa, xb) }, { i: i - 2, x: number_default(ya, yb) });
+        var i2 = s.push(pop(s) + "scale(", null, ",", null, ")");
+        q.push({ i: i2 - 4, x: number_default(xa, xb) }, { i: i2 - 2, x: number_default(ya, yb) });
       } else if (xb !== 1 || yb !== 1) {
         s.push(pop(s) + "scale(" + xb + "," + yb + ")");
       }
@@ -1546,9 +1546,9 @@
       scale(a.scaleX, a.scaleY, b.scaleX, b.scaleY, s, q);
       a = b = null;
       return function(t) {
-        var i = -1, n = q.length, o;
-        while (++i < n)
-          s[(o = q[i]).i] = o.x(t);
+        var i2 = -1, n = q.length, o;
+        while (++i2 < n)
+          s[(o = q[i2]).i] = o.x(t);
         return s.join("");
       };
     };
@@ -1736,11 +1736,11 @@
         start(elapsed - self.delay);
     }
     function start(elapsed) {
-      var i, j, n, o;
+      var i2, j, n, o;
       if (self.state !== SCHEDULED)
         return stop();
-      for (i in schedules) {
-        o = schedules[i];
+      for (i2 in schedules) {
+        o = schedules[i2];
         if (o.name !== self.name)
           continue;
         if (o.state === STARTED)
@@ -1749,12 +1749,12 @@
           o.state = ENDED;
           o.timer.stop();
           o.on.call("interrupt", node, node.__data__, o.index, o.group);
-          delete schedules[i];
-        } else if (+i < id) {
+          delete schedules[i2];
+        } else if (+i2 < id) {
           o.state = ENDED;
           o.timer.stop();
           o.on.call("cancel", node, node.__data__, o.index, o.group);
-          delete schedules[i];
+          delete schedules[i2];
         }
       }
       timeout_default(function() {
@@ -1770,17 +1770,17 @@
         return;
       self.state = STARTED;
       tween = new Array(n = self.tween.length);
-      for (i = 0, j = -1;i < n; ++i) {
-        if (o = self.tween[i].value.call(node, node.__data__, self.index, self.group)) {
+      for (i2 = 0, j = -1;i2 < n; ++i2) {
+        if (o = self.tween[i2].value.call(node, node.__data__, self.index, self.group)) {
           tween[++j] = o;
         }
       }
       tween.length = j + 1;
     }
     function tick(elapsed) {
-      var t = elapsed < self.duration ? self.ease.call(null, elapsed / self.duration) : (self.timer.restart(stop), self.state = ENDING, 1), i = -1, n = tween.length;
-      while (++i < n) {
-        tween[i].call(node, t);
+      var t = elapsed < self.duration ? self.ease.call(null, elapsed / self.duration) : (self.timer.restart(stop), self.state = ENDING, 1), i2 = -1, n = tween.length;
+      while (++i2 < n) {
+        tween[i2].call(node, t);
       }
       if (self.state === ENDING) {
         self.on.call("end", node, node.__data__, self.index, self.group);
@@ -1791,7 +1791,7 @@
       self.state = ENDED;
       self.timer.stop();
       delete schedules[id];
-      for (var i in schedules)
+      for (var i2 in schedules)
         return;
       delete node.__transition;
     }
@@ -1799,12 +1799,12 @@
 
   // node_modules/d3-transition/src/interrupt.js
   function interrupt_default(node, name) {
-    var schedules = node.__transition, schedule, active, empty2 = true, i;
+    var schedules = node.__transition, schedule, active, empty2 = true, i2;
     if (!schedules)
       return;
     name = name == null ? null : name + "";
-    for (i in schedules) {
-      if ((schedule = schedules[i]).name !== name) {
+    for (i2 in schedules) {
+      if ((schedule = schedules[i2]).name !== name) {
         empty2 = false;
         continue;
       }
@@ -1812,7 +1812,7 @@
       schedule.state = ENDED;
       schedule.timer.stop();
       schedule.on.call(active ? "interrupt" : "cancel", node, node.__data__, schedule.index, schedule.group);
-      delete schedules[i];
+      delete schedules[i2];
     }
     if (empty2)
       delete node.__transition;
@@ -1832,10 +1832,10 @@
       var schedule = set2(this, id), tween = schedule.tween;
       if (tween !== tween0) {
         tween1 = tween0 = tween;
-        for (var i = 0, n = tween1.length;i < n; ++i) {
-          if (tween1[i].name === name) {
+        for (var i2 = 0, n = tween1.length;i2 < n; ++i2) {
+          if (tween1[i2].name === name) {
             tween1 = tween1.slice();
-            tween1.splice(i, 1);
+            tween1.splice(i2, 1);
             break;
           }
         }
@@ -1851,13 +1851,13 @@
       var schedule = set2(this, id), tween = schedule.tween;
       if (tween !== tween0) {
         tween1 = (tween0 = tween).slice();
-        for (var t = { name, value }, i = 0, n = tween1.length;i < n; ++i) {
-          if (tween1[i].name === name) {
-            tween1[i] = t;
+        for (var t = { name, value }, i2 = 0, n = tween1.length;i2 < n; ++i2) {
+          if (tween1[i2].name === name) {
+            tween1[i2] = t;
             break;
           }
         }
-        if (i === n)
+        if (i2 === n)
           tween1.push(t);
       }
       schedule.tween = tween1;
@@ -1868,8 +1868,8 @@
     name += "";
     if (arguments.length < 2) {
       var tween = get2(this.node(), id).tween;
-      for (var i = 0, n = tween.length, t;i < n; ++i) {
-        if ((t = tween[i]).name === name) {
+      for (var i2 = 0, n = tween.length, t;i2 < n; ++i2) {
+        if ((t = tween[i2]).name === name) {
           return t.value;
         }
       }
@@ -1942,27 +1942,27 @@
     };
   }
   function attr_default2(name, value) {
-    var fullname = namespace_default(name), i = fullname === "transform" ? interpolateTransformSvg : interpolate_default;
-    return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS2 : attrFunction2)(fullname, i, tweenValue(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS2 : attrRemove2)(fullname) : (fullname.local ? attrConstantNS2 : attrConstant2)(fullname, i, value));
+    var fullname = namespace_default(name), i2 = fullname === "transform" ? interpolateTransformSvg : interpolate_default;
+    return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS2 : attrFunction2)(fullname, i2, tweenValue(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS2 : attrRemove2)(fullname) : (fullname.local ? attrConstantNS2 : attrConstant2)(fullname, i2, value));
   }
 
   // node_modules/d3-transition/src/transition/attrTween.js
-  function attrInterpolate(name, i) {
+  function attrInterpolate(name, i2) {
     return function(t) {
-      this.setAttribute(name, i.call(this, t));
+      this.setAttribute(name, i2.call(this, t));
     };
   }
-  function attrInterpolateNS(fullname, i) {
+  function attrInterpolateNS(fullname, i2) {
     return function(t) {
-      this.setAttributeNS(fullname.space, fullname.local, i.call(this, t));
+      this.setAttributeNS(fullname.space, fullname.local, i2.call(this, t));
     };
   }
   function attrTweenNS(fullname, value) {
     var t0, i0;
     function tween() {
-      var i = value.apply(this, arguments);
-      if (i !== i0)
-        t0 = (i0 = i) && attrInterpolateNS(fullname, i);
+      var i2 = value.apply(this, arguments);
+      if (i2 !== i0)
+        t0 = (i0 = i2) && attrInterpolateNS(fullname, i2);
       return t0;
     }
     tween._value = value;
@@ -1971,9 +1971,9 @@
   function attrTween(name, value) {
     var t0, i0;
     function tween() {
-      var i = value.apply(this, arguments);
-      if (i !== i0)
-        t0 = (i0 = i) && attrInterpolate(name, i);
+      var i2 = value.apply(this, arguments);
+      if (i2 !== i0)
+        t0 = (i0 = i2) && attrInterpolate(name, i2);
       return t0;
     }
     tween._value = value;
@@ -2056,8 +2056,8 @@
     if (typeof match !== "function")
       match = matcher_default(match);
     for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0;i < n; ++i) {
-        if ((node = group[i]) && match.call(node, node.__data__, i, group)) {
+      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i2 = 0;i2 < n; ++i2) {
+        if ((node = group[i2]) && match.call(node, node.__data__, i2, group)) {
           subgroup.push(node);
         }
       }
@@ -2070,9 +2070,9 @@
     if (transition._id !== this._id)
       throw new Error;
     for (var groups0 = this._groups, groups1 = transition._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0;j < m; ++j) {
-      for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i = 0;i < n; ++i) {
-        if (node = group0[i] || group1[i]) {
-          merge[i] = node;
+      for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i2 = 0;i2 < n; ++i2) {
+        if (node = group0[i2] || group1[i2]) {
+          merge[i2] = node;
         }
       }
     }
@@ -2085,9 +2085,9 @@
   // node_modules/d3-transition/src/transition/on.js
   function start(name) {
     return (name + "").trim().split(/^|\s+/).every(function(t) {
-      var i = t.indexOf(".");
-      if (i >= 0)
-        t = t.slice(0, i);
+      var i2 = t.indexOf(".");
+      if (i2 >= 0)
+        t = t.slice(0, i2);
       return !t || t === "start";
     });
   }
@@ -2109,8 +2109,8 @@
   function removeFunction(id) {
     return function() {
       var parent = this.parentNode;
-      for (var i in this.__transition)
-        if (+i !== id)
+      for (var i2 in this.__transition)
+        if (+i2 !== id)
           return;
       if (parent)
         parent.removeChild(this);
@@ -2126,12 +2126,12 @@
     if (typeof select !== "function")
       select = selector_default(select);
     for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0;i < n; ++i) {
-        if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
+      for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i2 = 0;i2 < n; ++i2) {
+        if ((node = group[i2]) && (subnode = select.call(node, node.__data__, i2, group))) {
           if ("__data__" in node)
             subnode.__data__ = node.__data__;
-          subgroup[i] = subnode;
-          schedule_default(subgroup[i], name, id, i, subgroup, get2(node, id));
+          subgroup[i2] = subnode;
+          schedule_default(subgroup[i2], name, id, i2, subgroup, get2(node, id));
         }
       }
     }
@@ -2144,9 +2144,9 @@
     if (typeof select !== "function")
       select = selectorAll_default(select);
     for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, node, i = 0;i < n; ++i) {
-        if (node = group[i]) {
-          for (var children2 = select.call(node, node.__data__, i, group), child, inherit = get2(node, id), k = 0, l = children2.length;k < l; ++k) {
+      for (var group = groups[j], n = group.length, node, i2 = 0;i2 < n; ++i2) {
+        if (node = group[i2]) {
+          for (var children2 = select.call(node, node.__data__, i2, group), child, inherit = get2(node, id), k = 0, l = children2.length;k < l; ++k) {
             if (child = children2[k]) {
               schedule_default(child, name, id, k, children2, inherit);
             }
@@ -2204,22 +2204,22 @@
     };
   }
   function style_default2(name, value, priority) {
-    var i = (name += "") === "transform" ? interpolateTransformCss : interpolate_default;
-    return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove2(name)) : typeof value === "function" ? this.styleTween(name, styleFunction2(name, i, tweenValue(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant2(name, i, value), priority).on("end.style." + name, null);
+    var i2 = (name += "") === "transform" ? interpolateTransformCss : interpolate_default;
+    return value == null ? this.styleTween(name, styleNull(name, i2)).on("end.style." + name, styleRemove2(name)) : typeof value === "function" ? this.styleTween(name, styleFunction2(name, i2, tweenValue(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant2(name, i2, value), priority).on("end.style." + name, null);
   }
 
   // node_modules/d3-transition/src/transition/styleTween.js
-  function styleInterpolate(name, i, priority) {
+  function styleInterpolate(name, i2, priority) {
     return function(t) {
-      this.style.setProperty(name, i.call(this, t), priority);
+      this.style.setProperty(name, i2.call(this, t), priority);
     };
   }
   function styleTween(name, value, priority) {
     var t, i0;
     function tween() {
-      var i = value.apply(this, arguments);
-      if (i !== i0)
-        t = (i0 = i) && styleInterpolate(name, i, priority);
+      var i2 = value.apply(this, arguments);
+      if (i2 !== i0)
+        t = (i0 = i2) && styleInterpolate(name, i2, priority);
       return t;
     }
     tween._value = value;
@@ -2253,17 +2253,17 @@
   }
 
   // node_modules/d3-transition/src/transition/textTween.js
-  function textInterpolate(i) {
+  function textInterpolate(i2) {
     return function(t) {
-      this.textContent = i.call(this, t);
+      this.textContent = i2.call(this, t);
     };
   }
   function textTween(value) {
     var t0, i0;
     function tween() {
-      var i = value.apply(this, arguments);
-      if (i !== i0)
-        t0 = (i0 = i) && textInterpolate(i);
+      var i2 = value.apply(this, arguments);
+      if (i2 !== i0)
+        t0 = (i0 = i2) && textInterpolate(i2);
       return t0;
     }
     tween._value = value;
@@ -2284,10 +2284,10 @@
   function transition_default() {
     var name = this._name, id0 = this._id, id1 = newId();
     for (var groups = this._groups, m = groups.length, j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, node, i = 0;i < n; ++i) {
-        if (node = group[i]) {
+      for (var group = groups[j], n = group.length, node, i2 = 0;i2 < n; ++i2) {
+        if (node = group[i2]) {
           var inherit = get2(node, id0);
-          schedule_default(node, name, id1, i, group, {
+          schedule_default(node, name, id1, i2, group, {
             time: inherit.time + inherit.delay + inherit.duration,
             delay: 0,
             duration: inherit.duration,
@@ -2398,9 +2398,9 @@
       id2 = newId(), (timing = defaultTiming).time = now(), name = name == null ? null : name + "";
     }
     for (var groups = this._groups, m = groups.length, j = 0;j < m; ++j) {
-      for (var group = groups[j], n = group.length, node, i = 0;i < n; ++i) {
-        if (node = group[i]) {
-          schedule_default(node, name, id2, i, group, timing || inherit(node, id2));
+      for (var group = groups[j], n = group.length, node, i2 = 0;i2 < n; ++i2) {
+        if (node = group[i2]) {
+          schedule_default(node, name, id2, i2, group, timing || inherit(node, id2));
         }
       }
     }
@@ -2458,14 +2458,14 @@
   var NEWLINE = 10;
   var RETURN = 13;
   function objectConverter(columns) {
-    return new Function("d", "return {" + columns.map(function(name, i) {
-      return JSON.stringify(name) + ": d[" + i + '] || ""';
+    return new Function("d", "return {" + columns.map(function(name, i2) {
+      return JSON.stringify(name) + ": d[" + i2 + '] || ""';
     }).join(",") + "}");
   }
   function customConverter(columns, f) {
     var object = objectConverter(columns);
-    return function(row, i) {
-      return f(object(row), i, columns);
+    return function(row, i2) {
+      return f(object(row), i2, columns);
     };
   }
   function inferColumns(rows) {
@@ -2494,9 +2494,9 @@
     var reFormat = new RegExp('["' + delimiter + `
 \r]`), DELIMITER = delimiter.charCodeAt(0);
     function parse(text, f) {
-      var convert, columns, rows = parseRows(text, function(row, i) {
+      var convert, columns, rows = parseRows(text, function(row, i2) {
         if (convert)
-          return convert(row, i - 1);
+          return convert(row, i2 - 1);
         columns = row, convert = f ? customConverter(row, f) : objectConverter(row);
       });
       rows.columns = columns || [];
@@ -2513,11 +2513,11 @@
           return EOF;
         if (eol)
           return eol = false, EOL;
-        var i, j = I, c;
+        var i2, j = I, c;
         if (text.charCodeAt(j) === QUOTE) {
           while (I++ < N && text.charCodeAt(I) !== QUOTE || text.charCodeAt(++I) === QUOTE)
             ;
-          if ((i = I) >= N)
+          if ((i2 = I) >= N)
             eof = true;
           else if ((c = text.charCodeAt(I++)) === NEWLINE)
             eol = true;
@@ -2526,10 +2526,10 @@
             if (text.charCodeAt(I) === NEWLINE)
               ++I;
           }
-          return text.slice(j + 1, i - 1).replace(/""/g, '"');
+          return text.slice(j + 1, i2 - 1).replace(/""/g, '"');
         }
         while (I < N) {
-          if ((c = text.charCodeAt(i = I++)) === NEWLINE)
+          if ((c = text.charCodeAt(i2 = I++)) === NEWLINE)
             eol = true;
           else if (c === RETURN) {
             eol = true;
@@ -2537,7 +2537,7 @@
               ++I;
           } else if (c !== DELIMITER)
             continue;
-          return text.slice(j, i);
+          return text.slice(j, i2);
         }
         return eof = true, text.slice(j, N);
       }
@@ -2715,4 +2715,9 @@
   (async () => {
     await main();
   })();
+  for (i = 0;i < 5; i++) {
+    console.log(i);
+  }
+  var add = (a, b) => a + b;
+  console.log(add(20, 30));
 })();

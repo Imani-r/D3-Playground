@@ -10,8 +10,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun build ./src/main/main.js --outfile=resources/public/js/main.js --format=iife --watch",
-    "flowers": "bun build ./projects/flowers.js --outfile=resources/public/projects/flowers/output.js --format=iife --watch",
-    "sandbox": "bun build ./projects/sandbox.js --outfile=resources/public/projects/sandbox/output.js --format=iife --watch"
+    "flowers": "bun build ./projects/flowers.js --outfile=resources/projects/flowers/output.js --format=iife --watch",
+    "sandbox": "bun build ./projects/sandbox.js --outfile=resources/projects/sandbox/output.js --format=iife --watch"
   }
 }
