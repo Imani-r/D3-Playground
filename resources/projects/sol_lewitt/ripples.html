@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Ripples</title>
+		<!-- <link rel="stylesheet" href="./style.css" /> -->
+		<link rel="icon" href="./favicon.ico" type="image/x-icon" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			/* Centre the SVG in the viewport */
+			body {
+				margin: 0;
+				overflow: visible;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			/* Scale SVG to fill the window with breathing room */
+			svg {
+				width: min(90vw, 90vh);
+				height: min(90vw, 90vh);
+				overflow: visible;
+			}
+
+			/* Define the ripple pulse — scales each ring out and back */
+			@keyframes ripple {
+				0% {
+					transform: scale(1);
+				} /* normal size */
+				50% {
+					transform: scale(1.1);
+				} /* slightly grown */
+				100% {
+					transform: scale(1);
+				} /* back to normal */
+			}
+
+			/* Apply the animation to all circles */
+			.circle {
+				transform-origin: center; /* scale from the centre outward */
+				animation: ripple 6s ease-in-out infinite; /* loop forever */
+			}
+
+			/* Stagger each ring's animation so the ripple travels outward from centre.
+   The innermost circle (circle-11) starts first, each outer circle fires slightly later. */
+			.circle-1 {
+				animation-delay: 0s;
+			}
+			.circle {
+				animation-delay: 0.3s;
+			}
+			.circle-3 {
+				animation-delay: 0.6s;
+			}
+			.circle-4 {
+				animation-delay: 0.9s;
+			}
+			.circle-5 {
+				animation-delay: 1.2s;
+			}
+			.circle-6 {
+				animation-delay: 1.5s;
+			}
+			.circle-7 {
+				animation-delay: 1.8s;
+			}
+			.circle-8 {
+				animation-delay: 2.1s;
+			}
+			.circle-9 {
+				animation-delay: 2.4s;
+			}
+			.circle-10 {
+				animation-delay: 2.7s;
+			}
+			.circle-11 {
+				animation-delay: 3s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg viewBox="0 0 401 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle
+				class="circle circle-1"
+				cx="200"
+				cy="200"
+				r="200"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-2"
+				cx="200"
+				cy="200"
+				r="185"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-3"
+				cx="200"
+				cy="200"
+				r="175"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-4"
+				cx="200"
+				cy="200"
+				r="150"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-5"
+				cx="200"
+				cy="200"
+				r="145"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-6"
+				cx="200"
+				cy="200"
+				r="125"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-7"
+				cx="200"
+				cy="200"
+				r="115"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-8"
+				cx="200"
+				cy="200"
+				r="95"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-9"
+				cx="200"
+				cy="200"
+				r="75"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-10"
+				cx="200"
+				cy="200"
+				r="45"
+				stroke="black"
+				stroke-width="5"
+			/>
+			<circle
+				class="circle circle-11"
+				cx="200"
+				cy="200"
+				r="30"
+				stroke="black"
+				stroke-width="5"
+			/>
+		</svg>
+	</body>
+</html>
